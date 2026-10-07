@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Biodata Saya</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fff5fb;
+            color: #4d3b52;
+        }
+
+
+        /* =====================
+           HEADER
+        ===================== */
+
+        header {
+            background: linear-gradient(135deg, #d9a4e8, #f0b6dc);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+
+            border-bottom-left-radius: 35px;
+            border-bottom-right-radius: 35px;
+
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 38px;
+
+            text-shadow: 2px 3px rgba(100, 50, 110, 0.15);
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        header::before {
+            content: "✦";
+            position: absolute;
+            left: 15%;
+            top: 25px;
+            font-size: 30px;
+        }
+
+        header::after {
+            content: "♡";
+            position: absolute;
+            right: 15%;
+            bottom: 20px;
+            font-size: 40px;
+        }
+
+
+        /* =====================
+           CONTAINER
+        ===================== */
+
+        .container {
+            max-width: 900px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+
+        /* =====================
+           PROFILE CARD
+        ===================== */
+
+        .profile-card {
+            background: white;
+
+            border-radius: 25px;
+
+            padding: 30px;
+
+            border: 2px solid #efd9ec;
+
+            box-shadow:
+                0 10px 30px rgba(170, 100, 160, 0.12);
+        }
+
+
+        .profile-top {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+
+        /* =====================
+           FOTO
+        ===================== */
+
+        .photo-box {
+            flex-shrink: 0;
+        }
+
+        .photo-box img {
+            width: 170px;
+            height: 170px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 6px solid #e3b6e8;
+
+            padding: 4px;
+
+            background: white;
+
+            box-shadow:
+                0 8px 20px rgba(180, 100, 170, 0.18);
+        }
+
+
+        /* =====================
+           IDENTITAS
+        ===================== */
+
+        .identity {
+            flex: 1;
+        }
+
+        .identity .small {
+            color: #b17cbb;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            font-weight: bold;
+        }
+
+        .identity h2 {
+            color: #81459b;
+
+            font-size: 30px;
+
+            margin: 8px 0;
+        }
+
+        .identity .job {
+            color: #806d85;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* =====================
+           INFO
+        ===================== */
+
+        .info {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 10px;
+        }
+
+        .info-item {
+            background: #fff6fc;
+
+            border-radius: 12px;
+
+            padding: 10px 13px;
+
+            border: 1px solid #f0ddec;
+
+            font-size: 14px;
+        }
+
+        .info-item span {
+            display: block;
+
+            color: #b083b8;
+
+            font-size: 11px;
+
+            margin-bottom: 4px;
+        }
+
+
+        /* =====================
+           DIVIDER
+        ===================== */
+
+        .divider {
+            height: 1px;
+
+            background: #edd9e9;
+
+            margin: 30px 0;
+        }
+
+
+        /* =====================
+           SECTION
+        ===================== */
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color: #81459b;
+
+            font-size: 22px;
+
+            margin-bottom: 12px;
+        }
+
+        .section p {
+            line-height: 1.8;
+
+            font-size: 15px;
+
+            color: #66576a;
+        }
+
+
+        /* =====================
+           HOBI
+        ===================== */
+
+        .hobbies {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .hobby {
+            background: #f8e6f6;
+
+            color: #7d4b89;
+
+            padding: 12px 17px;
+
+            border-radius: 20px;
+
+            font-size: 14px;
+
+            border: 1px solid #efd4eb;
+
+            transition: 0.3s;
+        }
+
+        .hobby:hover {
+            background: #edcef0;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================
+           FOOTER
+        ===================== */
+
+        footer {
+            text-align: center;
+
+            padding: 25px;
+
+            color: #a487aa;
+
+            font-size: 13px;
+        }
+
+
+        /* =====================
+           RESPONSIVE
+        ===================== */
+
+        @media (max-width: 650px) {
+
+            header h1 {
+                font-size: 29px;
+            }
+
+            .profile-top {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+            .info {
+                grid-template-columns: 1fr;
+            }
+
+            .identity h2 {
+                font-size: 25px;
+            }
+
+            .hobbies {
+                justify-content: center;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>✿ Biodata Saya ✿</h1>
+
+        <p>Welcome to my little profile ♡</p>
+
+    </header>
+
+    <nav>
+        <a href="index.html">Layout Lab</a>
+        <a href="layout.html">Biodata</a>
+        <a href="data_mahasiswa.php">Data Mahasiswa</a>
+        <a href="form_mahasiswa.php">Tambah Mahasiswa</a>
+    </nav>
+
+    <!-- CONTENT -->
+
+    <div class="container">
+
+        <div class="profile-card">
+
+
+            <!-- FOTO + IDENTITAS -->
+
+            <div class="profile-top">
+
+
+                <div class="photo-box">
+
+                    <img
+                        src="foto cantik.jpeg"
+                        alt="Foto Anggita"
+                    >
+
+                </div>
+
+
+
+                <div class="identity">
+
+                    <div class="small">
+                        HELLO, I'M
+                    </div>
+
+                    <h2>Anggita Cefrida Futri</h2>
+
+                    <p class="job">
+                        🎓 Mahasiswa Program Studi Informatika
+                    </p>
+
+
+                    <div class="info">
+
+                        <div class="info-item">
+                            <span>📍 TEMPAT LAHIR</span>
+                            Bekasi
+                        </div>
+
+                        <div class="info-item">
+                            <span>🎂 TANGGAL LAHIR</span>
+                            03 Agustus 2007
+                        </div>
+
+                        <div class="info-item">
+                            <span>🏠 ALAMAT</span>
+                            Jatimulya, Bekasi
+                        </div>
+
+                        <div class="info-item">
+                            <span>💻 PROGRAM STUDI</span>
+                            Informatika
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="divider"></div>
+
+
+
+            <!-- TENTANG SAYA -->
+
+            <div class="section">
+
+                <h2 class="section-title">
+                    🌷 Tentang Saya
+                </h2>
+
+                <p>
+                    Halo! Nama saya adalah Anggita Cefrida Futri,
+                    biasa dipanggil Anggita. Saya merupakan mahasiswa
+                    dari Prodi Informatika. Saya sedang belajar
+                    web programming menggunakan HTML.
+                </p>
+
+            </div>
+
+
+
+            <!-- HOBI -->
+
+            <div class="section">
+
+                <h2 class="section-title">
+                    🎀 Hobi Saya
+                </h2>
+
+                <div class="hobbies">
+
+                    <div class="hobby">
+                        📖 Membaca Manhwa
+                    </div>
+
+                    <div class="hobby">
+                        🎧 Mendengarkan Musik
+                    </div>
+
+                    <div class="hobby">
+                        🧹 Bersih-bersih
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        Made with ♡ | Web Programming 1
+
+    </footer>
+
+
+</body>
+</html>
